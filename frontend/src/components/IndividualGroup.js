@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import MapGL, { Marker, Popup } from 'react-map-gl'
 import ReactFilestack from 'filestack-react'
-require('dotenv').config()
 import axios from 'axios'
 import Auth from '../lib/Auth'
 import { toast } from 'react-toastify'

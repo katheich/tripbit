@@ -613,7 +613,7 @@ const IndividualGroup = (props) => {
             Ranking
           </h2>
           <div className="text is-size-5">
-            {members
+            {group.members && group.members
               .sort(function (a, b) {
                 if (a.score < b.score) { return 1 }
                 if (a.score > b.score) { return -1 }

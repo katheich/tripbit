@@ -9,15 +9,17 @@ const SearchBar = ({toggleSearch, searchModal }) => {
 
 
   useEffect(() => {
-    axios.get('/api/users', {
-      headers: { Authorization: `Bearer ${Auth.getToken()}` }
-    })
-      .then(response => {
-        setData(response.data)
-        // console.log(data)
-        // console.log(response.data)
+    if (Auth.isAuthorized()) {
+      axios.get('/api/users', {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
-      .catch(error => console.log(error))
+        .then(response => {
+          setData(response.data)
+          // console.log(data)
+          // console.log(response.data)
+        })
+        .catch(error => console.log(error))
+    }
   }, [searchModal])
 
 

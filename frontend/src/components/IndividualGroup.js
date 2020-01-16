@@ -34,7 +34,9 @@ ADDITIONAL CONSIDERATIONS:
 
 const IndividualGroup = (props) => {
 
-  const notify = (message) => toast(message)
+  const notify = (message) => toast(message,{
+    progressClassName: 'toast-progress'
+  })
 
   // all the data
   const [members, setMembers] = useState([])
@@ -295,7 +297,7 @@ const IndividualGroup = (props) => {
   function handleMemberApprove(e) {
     e.preventDefault()
     const data = { id: e.target.id }
-    axios.put(`/api/groups/${group.id}/membership`, data,
+    axios.put(`/api/groups/${group.id}/membership/`, data,
       { headers: { Authorization: `Bearer ${Auth.getToken()}` } }
     )
       .then(resp => {

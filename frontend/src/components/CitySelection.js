@@ -101,7 +101,7 @@ const CitySelection = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault()
-    axios.put('/api/profile/edit/all', data, {
+    axios.put('/api/profile/edit/all/', data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(resp => {

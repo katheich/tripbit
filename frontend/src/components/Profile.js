@@ -122,7 +122,7 @@ const Profile = (props) => {
     e.preventDefault()
 
     // console.log(token)
-    axios.put('api/profile', data, {
+    axios.put('api/profile/', data, {
       headers: {
         Authorization: `Bearer ${Auth.getToken()}`
       }
@@ -143,7 +143,7 @@ const Profile = (props) => {
   const handleSubmit = () => {
 
     // console.log(token)
-    axios.put('api/profile', data, {
+    axios.put('api/profile/', data, {
       headers: {
         Authorization: `Bearer ${Auth.getToken()}`
       }

@@ -288,7 +288,6 @@ const Profile = (props) => {
 
   return (
     <div id="profile">
-      {console.log(process.env.fileloaderKey)}
       {/* {console.log('user id? =', parseInt(props.match.params.id), 'function call=', Auth.getUserId())} */}
       {/* {console.log('length of profile.towns ', Object.keys(profile.towns).length)}
       {console.log('boolean check ', Object.keys(profile.towns).length > 0)} */}
@@ -398,9 +397,7 @@ const Profile = (props) => {
                         <img className="is-rounded" src={!data.image ? 'https://bulma.io/images/placeholders/128x128.png' && profile.image : data.image} />
                       }
                     </figure>
-                    {/* <i className="fas fa-chevron-down is-size-3 down"></i> */}
                     <div className={scroll < 100 ? 'down-arrow down bounce' : 'down-arrow down gone'}></div>
-                    {/* <i className={scroll < 250 ? 'fas fa-chevron-down is-size-3 down' : 'fas fa-chevron-down is-size-3 down gone'}></i> Kathrin's */}
                   </div>
 
                 </div>

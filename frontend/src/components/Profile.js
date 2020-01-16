@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import MapGL, { Marker, Popup } from 'react-map-gl'
 import ReactFilestack from 'filestack-react'
-import { fileloaderKey } from '../config/environment'
 import axios from 'axios'
 import Auth from '../lib/Auth'
 
@@ -289,6 +288,7 @@ const Profile = (props) => {
 
   return (
     <div id="profile">
+      {console.log(process.env.fileloaderKey)}
       {/* {console.log('user id? =', parseInt(props.match.params.id), 'function call=', Auth.getUserId())} */}
       {/* {console.log('length of profile.towns ', Object.keys(profile.towns).length)}
       {console.log('boolean check ', Object.keys(profile.towns).length > 0)} */}
@@ -380,7 +380,7 @@ const Profile = (props) => {
               </div>
             </div> : <ReactFilestack
               preload={true}
-              apikey={fileloaderKey}
+              apikey={process.env.fileloaderKey}
               options={options}
               customRender={({ onPick }) => (
                 <div className="level-item" onClick={onPick}>

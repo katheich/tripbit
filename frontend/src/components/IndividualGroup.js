@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import MapGL, { Marker, Popup } from 'react-map-gl'
 import ReactFilestack from 'filestack-react'
-import { fileloaderKey } from '../config/environment'
+require('dotenv').config()
 import axios from 'axios'
 import Auth from '../lib/Auth'
 import { toast } from 'react-toastify'
@@ -550,7 +550,7 @@ const IndividualGroup = (props) => {
           <div className="hero-body group-page">
             <ReactFilestack
               preload={true}
-              apikey={fileloaderKey}
+              apikey={process.env.fileloaderKey}
               options={options}
               customRender={({ onPick }) => (
                 <div id="profile-banner-center" onClick={onPick}>
@@ -558,7 +558,7 @@ const IndividualGroup = (props) => {
                     {/* Class creates an oval. Look to change this so all propics are circles. */}
                     <img className="is-rounded" src={!group.image ? 'https://bulma.io/images/placeholders/128x128.png' && profile.image : group.image} />
                   </figure>
-                  <i className={scroll < 250 ? 'fas fa-chevron-down is-size-3 down' : 'fas fa-chevron-down is-size-3 down gone'}></i>
+                  <div className={scroll < 100 ? 'down-arrow down bounce' : 'down-arrow down gone'}></div>
                 </div>
               )}
               onSuccess={handleImageUpload}

@@ -149,6 +149,3 @@ class UserListView(APIView):
         users = User.objects.all()
         serialized_userList = PopulatedUserSerializer(users, many=True)
         return Response(serialized_userList.data)
-
-
-         

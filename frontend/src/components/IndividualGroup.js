@@ -618,7 +618,7 @@ const IndividualGroup = (props) => {
                 return 0
               })
               .map((member, i) => {
-                return <Link to={`/profile/${member.id}`} className="level is-mobile" key={i}>
+                return <Link to={`/profile/${member.id}/`} className="level is-mobile" key={i}>
                   <div className="level-left">
                     <div className="level-item position">
                       {i + 1}.

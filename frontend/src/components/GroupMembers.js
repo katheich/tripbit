@@ -16,7 +16,7 @@ const GroupMembers = ({ group, handleMemberApprove, handleMemberRemove }) => (
           .filter(member => member.id !== group.owner.id)
           .map((member, i) => {
             return <div className="level" key={i}>
-              <Link to={`/profile/${member.id}`} className="level-left">
+              <Link to={`/profile/${member.id}/`} className="level-left">
                 <div className="level-item">
                   <figure className="image is-48x48 member-image" key={i}>
                     <img className="is-rounded" src={member.image} alt="member profile image" />
@@ -50,7 +50,7 @@ const GroupMembers = ({ group, handleMemberApprove, handleMemberRemove }) => (
           .filter(member => member.id !== group.owner.id)
           .map((member, i) => {
             return <div className="level" key={i}>
-              <Link to={`/profile/${member.id}`} className="level-left">
+              <Link to={`/profile/${member.id}/`} className="level-left">
                 <div className="level-item">
                   <figure className="image is-48x48 member-image" key={i}>
                     <img className="is-rounded" src={member.image} alt="member profile image" />

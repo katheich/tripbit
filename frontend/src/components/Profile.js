@@ -256,7 +256,7 @@ const Profile = (props) => {
   // }
   useEffect(() => {
     // use Auth to get your profile!
-    // axios.get(`api/profile/${Auth.getUserId()}`)
+    // axios.get(`api/profile/${Auth.getUserId()}/`)
     window.addEventListener('scroll', handleScroll)
     axios.get(`api/profile/${props.match.params.id}/`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
@@ -470,7 +470,7 @@ const Profile = (props) => {
           <div className="display">
             {/* replace test data with profile.groups_joined when api call working */}
             {profile.groups_joined.map((group, i) => {
-              return <Link to={`/groups/${group.id}`} className="group-link" key={i}>
+              return <Link to={`/groups/${group.id}/`} className="group-link" key={i}>
                 <div className="image is-150x150">
                   <div className="group">
                     <div className="label">{group.name}</div>

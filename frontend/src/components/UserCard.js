@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const UserCard = ({ user, toggleSearch }) => (
 
-  <Link to={`/reroute/${user.id}`} id = "user-card" onClick={toggleSearch} className = "column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile" >
+  <Link to={`/reroute/${user.id}/`} id = "user-card" onClick={toggleSearch} className = "column is-one-quarter-desktop is-one-quarter-tablet is-half-mobile" >
     <div className="card">
 
       <div className="card-content">

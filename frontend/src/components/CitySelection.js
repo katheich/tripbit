@@ -107,7 +107,7 @@ const CitySelection = (props) => {
       .then(resp => {
         // console.log(resp.data)
         notify()
-        props.history.push(`/profile/${resp.data.id}`)
+        props.history.push(`/profile/${resp.data.id}/`)
       })
       .catch(err => {
         setErrors(err)

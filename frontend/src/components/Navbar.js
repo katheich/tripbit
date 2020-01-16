@@ -5,10 +5,6 @@ import Auth from '../lib/Auth'
 import SearchBar from './SearchBar'
 import UserContext from './UserContext'
 
-
-
-
-
 const Navbar = ({ toggleSearch }) => {
   const [dexterity, setDexterity] = useState(null)
   const history = useHistory()
@@ -80,9 +76,9 @@ const Navbar = ({ toggleSearch }) => {
               <li>
                 <div className="placeholder">
                   <div className="upside">
-                    <Link to={`/reroute/${Auth.getUserId()}`} className="navbutton" onClick={toggleNavbar}><i className="fa fa-user"></i></Link>
+                    <Link to={`/reroute/${Auth.getUserId()}/`} className="navbutton" onClick={toggleNavbar}><i className="fa fa-user"></i></Link>
                     {'\n'}
-                    <Link to={`/reroute/${Auth.getUserId()}`} onClick={toggleNavbar}> <p className="navbar-links">USER</p></Link>
+                    <Link to={`/reroute/${Auth.getUserId()}/`} onClick={toggleNavbar}> <p className="navbar-links">USER</p></Link>
                   </div>
                 </div>
               </li>
@@ -207,9 +203,9 @@ const Navbar = ({ toggleSearch }) => {
               <li>
                 <div className="placeholder">
                   <div className="upside">
-                    <Link to={`/reroute/${Auth.getUserId()}`} className="navbutton" onClick={toggleNavbar}><i className="fa fa-user"></i></Link>
+                    <Link to={`/reroute/${Auth.getUserId()}/`} className="navbutton" onClick={toggleNavbar}><i className="fa fa-user"></i></Link>
                     {'\n'}
-                    <Link to={`/reroute/${Auth.getUserId()}`} onClick={toggleNavbar}> <p className="navbar-links">USER</p></Link>
+                    <Link to={`/reroute/${Auth.getUserId()}/`} onClick={toggleNavbar}> <p className="navbar-links">USER</p></Link>
                   </div>
                 </div>
               </li>

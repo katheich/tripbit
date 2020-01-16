@@ -141,7 +141,7 @@ const IndividualGroup = (props) => {
 
   /// GET ALL NECESSARY DATA ****************************************************************************** //
   function fetchGroupData() {
-    axios.get(`/api/groups/${props.match.params.id}`, {
+    axios.get(`/api/groups/${props.match.params.id}/`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(resp => {
@@ -162,7 +162,7 @@ const IndividualGroup = (props) => {
 
   function fetchMemberData(members, memberData) {
     members.forEach(member => {
-      axios.get(`/api/profile/${member.id}`, {
+      axios.get(`/api/profile/${member.id}/`, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       })
         .then(resp => {
@@ -295,7 +295,7 @@ const IndividualGroup = (props) => {
   function handleMemberApprove(e) {
     e.preventDefault()
     const data = { id: e.target.id }
-    axios.put(`/api/groups/${group.id}/membership/`, data,
+    axios.put(`/api/groups/${group.id}/membership`, data,
       { headers: { Authorization: `Bearer ${Auth.getToken()}` } }
     )
       .then(resp => {
@@ -311,7 +311,7 @@ const IndividualGroup = (props) => {
     e.preventDefault()
     // console.log('remove!')
     const data = { id: e.target.id }
-    axios.delete(`api/groups/${group.id}/membership/`,
+    axios.delete(`api/groups/${group.id}/membership`,
       {
         data,
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
@@ -348,7 +348,7 @@ const IndividualGroup = (props) => {
   // GROUP INTERACTION ****************************************************************************** //
   function sendRequest(e) {
     e.preventDefault()
-    axios.get(`api/groups/${group.id}/membership/`, {
+    axios.get(`api/groups/${group.id}/membership`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(resp => {
@@ -363,7 +363,7 @@ const IndividualGroup = (props) => {
 
   function leaveGroup(e) {
     e.preventDefault()
-    axios.delete(`api/groups/${group.id}/membership/`,
+    axios.delete(`api/groups/${group.id}/membership`,
       {
         data: { id: Auth.getUserId() },
         headers: { Authorization: `Bearer ${Auth.getToken()}` }

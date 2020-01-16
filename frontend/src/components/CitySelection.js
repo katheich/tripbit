@@ -38,7 +38,7 @@ const CitySelection = (props) => {
 
 
   function getTownData() {
-    axios.get('/api/towns/')
+    axios.get('/api/towns')
       .then(resp => {
         // console.log('Response!')
         setTowns(resp.data)

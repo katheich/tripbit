@@ -53,7 +53,7 @@ const Groups = (props) => {
     e.preventDefault()
     const data = details
     // console.log(details)
-    axios.post('/api/groups/', data, {
+    axios.post('/api/groups', data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(resp => {
@@ -70,7 +70,7 @@ const Groups = (props) => {
   }
 
   function sendRequest(e) {
-    axios.get(`/api/groups/${e.target.id}/membership/`, {
+    axios.get(`/api/groups/${e.target.id}/membership`, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(resp => {

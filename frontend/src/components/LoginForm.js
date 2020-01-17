@@ -33,7 +33,7 @@ const Login = ({ props }) => {
       .then(resp => {
         Auth.setToken(resp.data.token)
         notify(resp.data.message)
-        props.history.push(`/profile/${Auth.getUserId()}/`)
+        props.history.push('/city_selection')
         setUserLogin(resp.data)
       })
       .catch(() => {

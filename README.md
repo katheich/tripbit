@@ -423,7 +423,41 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 ## Screenshots
 
-*** coming soon ***
+![Homepage](./docs/screenshots/homepage.png)
+
+![Loading page](./docs/screenshots/loadingscreen.png)
+
+![Registration](./docs/screenshots/registrationform.png)
+
+![Login](./docs/screenshots/loginform.png)
+
+![City selection](./docs/screenshots/cityselection.png)
+
+![User Profile 1](./docs/screenshots/userprofile1.png)
+
+![User Profile 2](./docs/screenshots/userprofile2.png)
+
+![User Profile 3](./docs/screenshots/userprofile3.png)
+
+![User Profile 4](./docs/screenshots/userprofile4.png)
+
+![User Editing](./docs/screenshots/userprofileedit.png)
+
+![User profile image upload](./docs/screenshots/filestack.png)
+
+![Map page](./docs/screenshots/mappage.png)
+
+![Searchbar](./docs/screenshots/searchbar.png)
+
+![Groups page](./docs/screenshots/groupspage.png)
+
+![Group profile](./docs/screenshots/groupprofile.png)
+
+![Group edit](./docs/screenshots/groupedit.png)
+
+![Group member](./docs/screenshots/groupmember.png)
+
+
 
 
 ## Potential future features
@@ -454,4 +488,4 @@ SVG Worldmap from [Pixel Map Generator](http://pixelmap.amcharts.com/) by amChar
 
 [React Toastify](https://github.com/fkhadra/react-toastify)
 
-Crayon hatching from [Pixabay](https://pixabay.com/illustrations/hatch-colored-pencil-scratches-2460786/) and adapted in varous ways by Kathrin Eichinger
+Crayon hatching from [Pixabay](https://pixabay.com/illustrations/hatch-colored-pencil-scratches-2460786/) and adapted by Kathrin Eichinger

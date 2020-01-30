@@ -329,7 +329,98 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 ### Complete final file structure
 
-*** coming soon ***
+```
+├── Pipfile
+├── Pipfile.lock
+├── Procfile
+├── README.md
+├── frontend
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── dist
+│   │   ├── bundle.js
+│   │   ├── bundle.js.map
+│   │   └── index.html
+│   ├── src
+│   │   ├── app.js
+│   │   ├── components
+│   │   │   ├── CitySelection.js
+│   │   │   ├── GroupCard.js
+│   │   │   ├── GroupForm.js
+│   │   │   ├── GroupMembers.js
+│   │   │   ├── Groups.js
+│   │   │   ├── Hero.js
+│   │   │   ├── IndividualGroup.js
+│   │   │   ├── LoginForm.js
+│   │   │   ├── MapPage.js
+│   │   │   ├── Navbar.js
+│   │   │   ├── Profile.js
+│   │   │   ├── RegistrationForm.js
+│   │   │   ├── SearchBar.js
+│   │   │   ├── SettingsForm.js
+│   │   │   ├── UserCard.js
+│   │   │   ├── UserContext.js
+│   │   │   └── Worldmap.js
+│   │   ├── images
+│   │   │   ├── crayon-shading-gold-gradient.png
+│   │   │   ├── crayon-shading-gold-gradient-light.png
+│   │   │   ├── mask-dark-gradient.png
+│   │   ├── index.html
+│   │   ├── lib
+│   │   │   ├── Auth.js
+│   │   │   └── SecureRoute.js
+│   │   └── styles
+│   │       └── main.scss
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── jwt_auth
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── authentication.py
+│   ├── badge_logic.py
+│   ├── db
+│   │   └── users.json
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── package.json
+├── project
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── travels
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── db
+│   │   ├── badges.csv
+│   │   ├── badges.xlsx
+│   │   ├── towns_badges_seeds.json
+│   │   ├── worldcities.csv
+│   │   ├── worldcities_clean.csv
+│   │   └── worldcities_clean.xlsx
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── webpack.config.js
+└── yarn.lock
+
+```
 
 
 ## Screenshots

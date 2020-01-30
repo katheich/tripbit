@@ -490,8 +490,84 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 ## Potential future features
 
-*** coming soon ***
+- Our original plan encompassed two more features as stretch goals, for which the groundwork is already laid on the back-end, but which we ultimately decided not to pursue during the week: a trips feature and a game
 
+- Trips: these were a separate SQL table, allowing a user to add a whole trip to their profile, consisting of a list of cities, a start and end date and notes:
+
+  ```py
+  class Trip(models.Model):
+    name = models.CharField(max_length=255)
+    start_date = models.DateField(auto_now=False, auto_now_add=False)
+    end_date = models.DateField(auto_now=False, auto_now_add=False)
+    towns = models.ManyToManyField(
+        Town,
+        related_name='trips',
+        blank=True
+    )
+    notes = models.CharField(max_length=5000, null=True)
+    owner = models.ForeignKey(
+        User,
+        related_name='trips',
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        return f'{self.name}, {self.start_date}/{self.end_date}'
+
+  ```
+
+- Game: The game would be played group-by-group, and would pool together all the cities that everyone in the group has been to. The players would have to locate these cities as accurately as they can on an unlabelled map and are given points in proprtion to how close their guess was to the correct location. Each group would have a ranking, showing the top three players and their corresponding scores. This is why the full group model on the back-end is the following:
+
+  ```py
+  class Group(models.Model):
+
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=300)
+    image = models.CharField(max_length=500, default='https://cdn.pixabay.com/photo/2014/04/02/10/47/globe-304586_1280.png')
+    owner = models.ForeignKey(
+        User,
+        related_name='groups_owned',
+        on_delete=models.CASCADE,
+        default=1
+    )
+    members = models.ManyToManyField(
+        User,
+        related_name='groups_joined',
+        blank=True
+    )
+    requests = models.ManyToManyField(
+        User,
+        related_name='groups_requested',
+        blank=True
+    )
+    podium_1_user = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        related_name='groups_podium1',
+        blank=True,
+        null=True
+    )
+    podium_2_user = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        related_name='groups_podium2',
+        blank=True,
+        null=True
+    )
+    podium_3_user = models.ForeignKey(
+        User,
+        on_delete=models.SET_NULL,
+        related_name='groups_podium3',
+        blank=True,
+        null=True
+    )
+    podium_1_score = models.IntegerField(null=True, blank=True)
+    podium_2_score = models.IntegerField(null=True, blank=True)
+    podium_3_score = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.name}'
+  ```
 
 ## Bugs 
 

@@ -487,7 +487,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 *** coming soon ***
 
-## Artwork and credit
+## Credit
 
 [World Cities Database](https://simplemaps.com/data/world-cities) provided by Simplemaps
 

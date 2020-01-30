@@ -423,9 +423,9 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 ## Screenshots
 
-![Homepage](./docs/screenshots/homepage.png)
-
 ![Loading page](./docs/screenshots/loadingscreen.png)
+
+![Homepage](./docs/screenshots/homepage.png)
 
 ![Registration](./docs/screenshots/registrationform.png)
 

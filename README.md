@@ -77,7 +77,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 - For the towns, we relied on the World Cities Database provided by Simplemaps, and so used the same fields as were available in that dataset. 
 
-  - We reduced the dataset a little by considering only town with more than 80,000 inhabitants. We then read the resulting .csv file into our PostgreSQL database using the terminal (as shown below). Once the data was read in, we created a fixtures.json file that would allow for more easily re-seeding the database in the format we needed.
+  - We reduced the dataset by considering only towns with more than 80,000 inhabitants. We then read the resulting .csv file into our PostgreSQL database using the terminal (as shown below). Once the data was read in, we created a fixtures.json file that would allow for more easily re-seeding the database in the format we needed.
 
   ```py
   python manage.py shell

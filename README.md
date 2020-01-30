@@ -219,7 +219,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
   | /groups/\<int:pk> 	|  x  	|      	|  x   	|     x   	|
   | /groups/\<int:pk>/membership       	|  x  	|      	|  x  	|    x   	|
 
-- `/groups` has both a GET and a POST route, the former allowing to see all group information in the database and the latter allowing the posting of a new group to the platform.
+- `/groups` has both a GET and a POST route, the former allowing to see all group information in the database and the latter allowing the posting of a new group to the platform. The user who posted the group automatically becomes that group's owner.
 - `/groups/<int:pk>` has a publicly accessible GET route, allowing the info of a specific group to be displayed. It also has a PUT and DELETE route, which allow the owner of the group to amend and delete the group information from the platform respectively.
 - `/groups/<int:pk>/membership` similarly has a GET, PUT and DELETE route, which do the following:
   - The GET route allows any user not affiliated with the group to request membership of the group. This will add the user to the 'requests' field of the Group model.

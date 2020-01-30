@@ -180,7 +180,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 - `/users` is a simple GET route, that provides a full list of users to allow searching for other users to access their profiles.
 - `/profile/<int:pk>/` similarly only has a GET route to fetch a specific user profile to be displayed.
 - `/profile` has a GET, PUT and DELETE route, all relating to the user data of the user currently logged in, allowing them to respectively fetch, amend and delete their profile information.
-- `/profile/edit/all` is the most complex part of the platform, even though it only involves a PUT route. This is the route via which a user add towns that they have visited to their profile, setting off a chain-reaction:
+- `/profile/edit/all` is the most complex part of the platform, even though it only involves a PUT route. This is the route via which a user adds towns that they have visited to their profile, setting off a chain-reaction:
   - The route is set up to always receive the full list of towns a given user has visited. These town are added to the user in the database.
   - Given this list of towns, the badges that the user has earned are determined. This is done via bespoke functions for each type of badge in the database, for instance the 'Columbus badge' (with ID 209 in the database) is determined as follows:
 

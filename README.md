@@ -31,7 +31,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 - JavaScript (ES6)
 - React.js
 - React Map GL (Mapbox)
-- FileStack API
+- FileStack React
 - React Toastify
 - Webpack
 - Dotenv
@@ -232,9 +232,100 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 ### Front-end
 
-*** coming soon ***
+**Homepage/Map page**
 
+- The hompage and map page use the same svg world map. The base file was obtained from amCharts, who provided the paths of the SVG with country name labels. Based on these, the colouring could be done conditionally on these names checking against the data from the back-end, for example the path for Great Britain is the following:
 
+  ```js
+  <g className="country">
+    <path 
+      (...) 
+      className={countries.includes('GB') ? 'amcharts-map-area visited' : 'amcharts-map-area'}> 
+    </path>
+    <text className="label" x="0" y="-225">
+      United Kingdom: {displayText('GB')}
+    </text>
+  </g>  
+  ```
+  - The `displayText()` function was created to have more flexibility regarding the information shown. For the simpler homepage, this looks as follows:
+
+  ```js
+  function displayText(country) {
+    const num = countriesData[country]
+    if (num > 1) {
+      return `${num} visitors`
+    } else if (num === 1){
+      return `${num} visitor`
+    } else {
+      return 'unexplored'
+    }
+  }
+  ```
+
+**User/Group Profiles**
+
+- The user and group profile pages largely have the same features and therefore follow the same structure.
+
+- Both user and group profiles are largely made up of a map using React Map GL, showing all the towns that the user / group members have visited. The component calculates the midpoint of all these locations and centers the map accordingly:
+
+  ```js
+  const midCoordinate = (towns) => {
+
+    const arrLats = towns.map((town) => {
+      return parseFloat(town.lat.replace(',', '.'))
+    })
+    const maxLat = Math.max(...arrLats)
+    const minLat = Math.min(...arrLats)
+    const midLat = (maxLat + minLat) / 2
+
+    const arrLngs = towns.map((town) => {
+      return parseFloat(town.lng.replace(',', '.'))
+    })
+    const maxLng = Math.max(...arrLngs)
+    const minLng = Math.min(...arrLngs)
+    const midLng = (maxLng + minLng) / 2
+
+    setViewport({ latitude: midLat, longitude: midLng, zoom: 1 })
+  }
+  ```
+
+- We allow users to upload profile images and group images using the FileStack API. The image uploaded via this interface is saved with FileStack, which returns a link to the file on their servers, which is in turn saved in our database.
+
+- For the user pages, we also display the badges. The images saved on the back-end do not have any specific styling, so we added the crayon mask above to make it look like they were 'scratched' off.
+
+- The user profile also has an edit button, that allows the user to edit their personal information.
+
+- The group profile has a different set of buttons depending on who is viewing the group:
+
+  - The owner of group has the ability to edit, manage members and delete the grouop.
+  - A member of the group has the option to leave the group.
+  - A user who has requested access sees a pending symbol.
+  - A user who is entirely unaffiliated to the group can request to become a member.
+
+**City selection**
+
+- The component always keeps complete list of towns visited in state, querying the initial list when it is mounted from the API and updating as the user checks or unchecks cities.
+
+- The 'done' button on this page is the only place where editing of towns occurs, i.e. the only place to go the `/profile/edit/all` route outlined in the back-end section above
+
+**Navbar**
+
+- Took the original from Zed Dash and adapted it for our purposes using pure CSS.
+
+- Allow different positioning based on what dexterity the user indicated in their registration, moving the navbar to the bottom right or left corner accordingly.
+
+**Search bar**
+
+- We wanted to have the searchbar available on every page, and therefore placed it in a Modal (from Bulma) on the root app.js file. The Search icon of the navbar therefore simply toggles said modal.
+
+- As we are using the React Hashrouter, we also needed to add a redirection to user profiles to ensure that if the search was called on a profile route, this was still recognised as a different route, we therefore link to profiles from the seach via the following: 
+  ```js
+  <Redirect from='/reroute/:id' to='/profile/:id' />
+  ```
+
+**Toastify**
+
+- For the city selection, user profiles and groups pages we implemented popups using Toastify that provide user feedback for interactions with the API.
 
 ### Complete final file structure
 
@@ -266,4 +357,12 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 [React Map GL](https://uber.github.io/react-map-gl/#/) by Uber
 
+[Filestack React](https://github.com/filestack/filestack-react)
+
+Navbar adapted from [Zed Dash](https://codepen.io/z-/pen/evxZpZ)
+
+SVG Worldmap from [Pixel Map Generator](http://pixelmap.amcharts.com/) by amCharts
+
 [React Toastify](https://github.com/fkhadra/react-toastify)
+
+Crayon hatching from [Pixabay](https://pixabay.com/illustrations/hatch-colored-pencil-scratches-2460786/) and adapted in varous ways by Kathrin Eichinger

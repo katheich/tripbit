@@ -451,13 +451,25 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 ![Groups page](./docs/screenshots/groupspage.png)
 
+![Add group](./docs/screenshots/newgroup.png)
+
 ![Group profile](./docs/screenshots/groupprofile.png)
 
 ![Group edit](./docs/screenshots/groupedit.png)
 
 ![Group member](./docs/screenshots/groupmember.png)
 
+![Mobile 1](./docs/screenshots/mobile1.png)
 
+![Mobile 2](./docs/screenshots/mobile2.png)
+
+![Mobile 3](./docs/screenshots/mobile3.png)
+
+![Mobile 4](./docs/screenshots/mobile4.png)
+
+![Mobile 5](./docs/screenshots/mobile6.png)
+
+![Mobile 6](./docs/screenshots/mobile5.png)
 
 
 ## Potential future features

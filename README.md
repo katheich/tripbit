@@ -171,7 +171,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
   | /register 	|     	|   x  	|     	|        	|
   | /login    	|     	|   x  	|     	|        	|
   | /users   	  |  x  	|    	|  	|      	|
-  | /profile/\<int:pk>/   	|  x  	|    	|  	|     	|
+  | /profile/\<int:pk>   	|  x  	|    	|  	|     	|
   | /profile   	|  x  	|   	|  x  	|    x   	|
   | /profile/edit/all   	|   	|    	|  x  	|      	|
 
@@ -181,20 +181,20 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 - `/profile/<int:pk>/` similarly only has a GET route to fetch a specific user profile to be displayed.
 - `/profile` has a GET, PUT and DELETE route, all relating to the user data of the user currently logged in, allowing them to respectively fetch, amend and delete their profile information.
 - `/profile/edit/all` is the most complex part of the platform, even though it only involves a PUT route. This is the route via which a user adds towns that they have visited to their profile, setting off a chain-reaction:
-  - The route is set up to always receive the full list of towns a given user has visited. These town are added to the user in the database.
+  - The route is set up to always receive the full list of towns a given user has visited. These towns are added to the user in the database.
   - Given this list of towns, the badges that the user has earned are determined. This is done via bespoke functions for each type of badge in the database, for instance the 'Columbus badge' (with ID 209 in the database) is determined as follows:
 
     ```py
     all_user_countries = list(map(lambda town: town['country'], towns))
     unique_user_countries = set(all_user_countries)
     unique_continents = set(map(lambda town: town['continent'], towns))
-    
+
     # Columbus (209)
     if 'Portugal' in unique_user_countries and 'Spain' in unique_user_countries and 'South America' in unique_continents:
         badge_ids.append(209)
     ```
   - Once this individual user's new badges have been allocated, the badges that rely on comparing information across users are re-assessed: checking which user has visited the most cities, countries, continents and earned the most badges. These users are saved to the badges directly.
-  - Following this, the user score is determined, adding 5 XP per town, 10 XP per capital, 20 XP per country and 50 XP per continent visited.
+  - Following this, we return to the individual user who posted new towns, whose score is now determined, adding 5 XP per town, 10 XP per capital, 20 XP per country and 50 XP per continent visited.
   - All of this new information is added to the user profile, which is then finally saved in the database.
 
 
@@ -213,7 +213,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
   | /badges          	|  x  	|    	|     	|        	|
   | /badges/\<int:pk> 	|  x  	|      	|     	|        	|
 
-- `/badges` and `/badges/<int:pk>` similarly only involve simple GET routes, allowing the display of all badges, as well as of one specific badge at a time,since the badge information itself is immutable in our database and badges are allocated to users via the `/profile/edit/all` route outlined above. In fact, we did not end up using these routes at all.
+- `/badges` and `/badges/<int:pk>` similarly only involve simple GET routes, allowing the display of all badges, as well as of one specific badge at a time, since the badge information itself is immutable in our database and badges are allocated to users via the `/profile/edit/all` route outlined above. In fact, we did not end up using these routes at all.
 
 #### 4. Group
 

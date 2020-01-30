@@ -359,7 +359,6 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 │   │   │   ├── SearchBar.js
 │   │   │   ├── SettingsForm.js
 │   │   │   ├── UserCard.js
-│   │   │   ├── UserContext.js
 │   │   │   └── Worldmap.js
 │   │   ├── images
 │   │   │   ├── crayon-shading-gold-gradient.png
@@ -419,7 +418,6 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 │   └── views.py
 ├── webpack.config.js
 └── yarn.lock
-
 ```
 
 

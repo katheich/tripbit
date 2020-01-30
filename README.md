@@ -4,9 +4,9 @@
 
 ## Overview
 
-This is the final project of the software engineering immersive course at GA London. The assignment was to create a **full-stack application** within **one week**, and we chose to complete it in a **team of four**.
+This is the final project of the software engineering immersive course at GA London. The assignment was to create a **full-stack application** within **one week**, and we chose to complete it in a **team of four**. 
 
-TripBit is a platform inspired by analogue scratch maps, where people scratch out the countries they have visited. Users are assigned a travel score and can earn badges for certain achievements. They can also create and join groups to compare their travels with friends more directly.
+TripBit is a platform inspired by analogue scratch maps, where people scratch out the countries they have visited. Users select the cities they have travelled to, are assigned a travel score and can earn badges for certain achievements. They can also create and join groups to compare their travels with friends more directly. All of this is achieved by using the Django framework with a PostgreSQL database, and a React front-end.
 
 You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find the GitHub repo [here](https://github.com/katheich/tripbit).
 

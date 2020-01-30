@@ -40,6 +40,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 - Trello
 - Bulma
 - Google Fonts
+- Adobe Photoshop Elements
 
 ## Approach
 

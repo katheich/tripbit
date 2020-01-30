@@ -185,6 +185,10 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
   - Given this list of towns, the badges that the user has earned are determined. This is done via bespoke functions for each type of badge in the database, for instance the 'Columbus badge' (with ID 209 in the database) is determined as follows:
 
     ```py
+    all_user_countries = list(map(lambda town: town['country'], towns))
+    unique_user_countries = set(all_user_countries)
+    unique_continents = set(map(lambda town: town['continent'], towns))
+    
     # Columbus (209)
     if 'Portugal' in unique_user_countries and 'Spain' in unique_user_countries and 'South America' in unique_continents:
         badge_ids.append(209)

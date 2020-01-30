@@ -10,6 +10,21 @@ TripBit is a platform inspired by analogue scratch maps, where people scratch ou
 
 You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find the GitHub repo [here](https://github.com/katheich/tripbit).
 
+## Table of Contents
+1. [Brief](#Brief)
+2. [Technologies used](#Technologies-used)
+3. [Approach](#Approach)
+    - [Planning](#Planning)
+    - [Back-end](#Back-end)
+    - [Front-end](#Front-end)
+    - [File Structure](#File-structure)
+4. [Screenshots](#Screenshots)
+5. [Potential future features](#Potential-future-features)
+6. [Bugs](#Bugs)
+7. [Lessons learned](#Lessons-learned)
+8. [Credit](#credit)
+
+
 ## Brief
 
 * Choose to work solo or in a team
@@ -328,7 +343,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 - For the city selection, user profiles and groups pages we implemented popups using Toastify that provide user feedback for interactions with the API.
 
-### Complete final file structure
+### File structure
 
 ```
 ├── Pipfile

@@ -6,7 +6,7 @@
 
 This is the final project of the software engineering immersive course at GA London. The assignment was to create a **full-stack application** within **one week**, and we chose to complete it in a **team of four**. 
 
-TripBit is a platform inspired by analogue scratch maps, where people scratch out the countries they have visited. Users select the cities they have travelled to, are assigned a travel score and can earn badges for certain achievements. They can also create and join groups to compare their travels with friends more directly. All of this is achieved by using the Django framework with a PostgreSQL database, and a React front-end.
+TripBit is a platform inspired by analogue scratch maps, where people scratch out the countries they have visited. Users select the cities they have travelled to, are assigned a travel score and can earn badges for certain achievements. They can also create and join groups to compare their travels with friends more directly. All of this is achieved by using the Django REST framework with a PostgreSQL database and a React front-end.
 
 You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find the GitHub repo [here](https://github.com/katheich/tripbit).
 
@@ -328,11 +328,11 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 - Took the original from Zed Dash and adapted it for our purposes using pure CSS.
 
-- Allow different positioning based on what dexterity the user indicated in their registration, moving the navbar to the bottom right or left corner accordingly.
+- Allow different positioning based on the dexterity the user indicated in their registration, moving the navbar to the bottom right or left corner accordingly.
 
 **Search bar**
 
-- We wanted to have the searchbar available on every page, and therefore placed it in a Modal (from Bulma) on the root app.js file. The Search icon of the navbar therefore simply toggles said modal.
+- We wanted to have the searchbar available on every page, and therefore placed it in a Modal (from Bulma) on the root app.js file. The Search icon of the navbar hence simply toggles said modal.
 
 - As we are using the React Hashrouter, we also needed to add a redirection to user profiles to ensure that if the search was called on a profile route, this was still recognised as a different route, we therefore link to profiles from the seach via the following: 
   ```js
@@ -471,8 +471,6 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 ![Group profile](./docs/screenshots/groupprofile.png)
 
-![Group edit](./docs/screenshots/groupedit.png)
-
 ![Group member](./docs/screenshots/groupmember.png)
 
 ![Mobile 1](./docs/screenshots/mobile1.png)
@@ -492,7 +490,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 - Our original plan encompassed two more features as stretch goals, for which the groundwork is already laid on the back-end, but which we ultimately decided not to pursue during the week: a trips feature and a game
 
-- Trips: these were a separate SQL table, allowing a user to add a whole trip to their profile, consisting of a list of cities, a start and end date and notes:
+- Trips: these were a separate SQL table, allowing a user to add whole trips to their profile, consisting of a list of cities, a start and end date and notes:
 
   ```py
   class Trip(models.Model):
@@ -571,12 +569,15 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 ## Bugs 
 
-*** coming soon ***
-
+- At times the Django API can be very slow, which necessitates giving the user accurate feedback. This was mostly implemented, but we did not yet have time to also do so for the search bar, where one cannot search users until the complete user list has loaded and no indication is given when this has occured.
 
 ## Lessons learned
 
-*** coming soon ***
+- As seen in the section on potential future features, it was important to know in advance what features we could abandon given the short timeframe and to ensure that doing so would have little implications on the functionality of the other features.
+
+- Working in a relatively bigger team already, Trello was extremely useful for clearly spelling out tasks and assigning them, which led to very few instances of redundancy and conflicts in our work.
+
+- As Django wraps a lot of functionality, its errors messages can often be somewhat cryptic to decipher. It is therefore also necessary to specify more nuanced error information coming back from the API to be able to trace back where things went wrong. For example, initially we had multiple instances where Django would simply return a 403 'forbbiden' response to the user, and it took a long time to track down that this was simply due to not putting a / at the end of the API url on the front-end, so a lot of extra information was appended directly to the url that the API could not make sense of.
 
 ## Credit
 

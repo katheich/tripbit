@@ -2,6 +2,9 @@
 ### ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) General Assembly, Software Engineering Immersive
 # TripBit
 
+
+by [Michael Adair](https://github.com/mjadair), [Kathrin Eichinger](https://github.com/katheich), [Georg Preuß](https://github.com/georgpreuss) & [Reggie Tachie-Menson](https://github.com/mr-anansi) 
+
 ## Overview
 
 This is the final project of the software engineering immersive course at GA London. The assignment was to create a **full-stack application** within **one week**, and we chose to complete it in a **team of four**. 
@@ -514,7 +517,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
   ```
 
-- Game: The game would be played group-by-group, and would pool together all the cities that everyone in the group has been to. The players would have to locate these cities as accurately as they can on an unlabelled map and are given points in proprtion to how close their guess was to the correct location. Each group would have a ranking, showing the top three players and their corresponding scores. This is why the full group model on the back-end is the following:
+- Game: The game would be played group-by-group, and would pool together all the cities that everyone in the group has been to. The players would have to locate these cities as accurately as they can on an unlabelled map and are given points in proportion to how close their guess was to the correct location. Each group would have a ranking, showing the top three players and their corresponding scores. This is why the full group model on the back-end is the following:
 
   ```py
   class Group(models.Model):

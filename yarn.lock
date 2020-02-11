@@ -2518,6 +2518,11 @@ direction@^1.0.2:
   resolved "https://registry.yarnpkg.com/direction/-/direction-1.0.3.tgz#5030e1e091e923904067d015dbaafd08f4d27d26"
   integrity sha512-8bHRqMt4w/kND19KBksE4NOJo+gIOPuiZfxQvbd6xikfKbuNBYBdLIw0hA/4lWzBaDpwpW+Olmg1BjD9+0LU2w==
 
+django@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/django/-/django-1.0.0.tgz#e90c7b91b8681555317545ba8ea69bc8a0a148c8"
+  integrity sha512-PWiLJnnmf+Mghtm1J/YCZMQLM+N8rrz+bBgchOGM9ldJx9IlXM0D8h4u0vfCM85XafEbWAE8JyFbESykgiBhEw==
+
 dns-equal@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dns-equal/-/dns-equal-1.0.0.tgz#b39e7f1da6eb0a75ba9c17324b34753c47e0654d"

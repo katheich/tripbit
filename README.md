@@ -316,7 +316,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 - The group profile has a different set of buttons depending on who is viewing the group:
 
-  - The owner of group has the ability to edit, manage members and delete the grouop.
+  - The owner of the group has the ability to edit, manage members and delete the grouop.
   - A member of the group has the option to leave the group.
   - A user who has requested access sees a pending symbol.
   - A user who is entirely unaffiliated to the group can request to become a member.
@@ -491,7 +491,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 ## Potential future features
 
-- Our original plan encompassed two more features as stretch goals, for which the groundwork is already laid on the back-end, but which we ultimately decided not to pursue during the week: a trips feature and a game
+- Our original plan encompassed two more features as stretch goals, for which the groundwork is already laid on the back-end, but which we ultimately decided not to pursue during the week: a trips feature and a game.
 
 - Trips: these were a separate SQL table, allowing a user to add whole trips to their profile, consisting of a list of cities, a start and end date and notes:
 
@@ -580,7 +580,7 @@ You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find
 
 - Working in a relatively bigger team already, Trello was extremely useful for clearly spelling out tasks and assigning them, which led to very few instances of redundancy and conflicts in our work.
 
-- As Django wraps a lot of functionality, its errors messages can often be somewhat cryptic to decipher. It is therefore also necessary to specify more nuanced error information coming back from the API to be able to trace back where things went wrong. For example, initially we had multiple instances where Django would simply return a 403 'forbbiden' response to the user, and it took a long time to track down that this was simply due to not putting a / at the end of the API url on the front-end, so a lot of extra information was appended directly to the url that the API could not make sense of.
+- As Django wraps a lot of functionality, its errors messages can often be somewhat cryptic to decipher. It is therefore also necessary to specify more nuanced error information coming back from the API to be able to trace back where things went wrong. For example, initially we had multiple instances where Django would simply return a 403 'forbbiden' response to the user. When we kept receiving a 403 upon logging in, it took a long time to track down that this was simply due to not putting a / at the end of the API url on the front-end, so a lot of extra information was appended directly to the url that the API could not make sense of.
 
 ## Credit
 

@@ -13,6 +13,18 @@ TripBit is a platform inspired by analogue scratch maps, where people scratch ou
 
 You can launch the app on Heroku [here](https://tripbit.herokuapp.com/), or find the GitHub repo [here](https://github.com/katheich/tripbit).
 
+---
+***NOTE***
+
+If you would like to test the app, you can create your own account (the email address does not need to be real) or please feel free to use the following credentials for a demo account:
+
+**Email**: lin-manuel@miranda.com
+
+**Password**: Password2020
+
+---
+
+
 ## Table of contents
 1. [Brief](#Brief)
 2. [Technologies used](#Technologies-used)
